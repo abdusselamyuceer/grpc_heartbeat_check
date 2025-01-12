@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+package heartbeat;
+
+service HeartBeat {
+  rpc SendHeartbeat(HeartBeatRequest) returns (HeartBeatResponse);
+}
+
+message HeartBeatRequest {
+  string node_id = 1;
+
+}
+
+message HeartBeatResponse {
+  bool status = 1;
+
+}

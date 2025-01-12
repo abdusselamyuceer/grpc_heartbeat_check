@@ -1,0 +1,31 @@
+[package]
+name = "grpc_heartbeat_check"
+version = "0.1.0"
+edition = "2021"
+
+
+
+[dependencies]
+tonic = "0.12.3"
+tokio = { version = "1", features = ["full"] }
+tonic-reflection = "0.12.3"
+prost = "0.13.4"
+tonic-web = "0.12.3"
+tower-http = "0.5.2"
+time = "0.3.37"
+chrono = "0.4.39"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_yaml = "0.9.34+deprecated"
+prost-types = "0.13.4"
+
+[build-dependencies]
+tonic-build = "0.12.3"
+
+
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
