@@ -53,7 +53,7 @@ impl HeartBeat for HeartBeatService {
      let last_seen_datetime = chrono::Utc::now();;
      active_nodes.insert(req.node_id.clone(), last_seen_datetime);
 
-     println!("Received heartbeat from node: {}, last seen: {:?}", req.node_id, last_seen_datetime);
+     println!("Received heartbeat from node: {}, last seen: {}", req.node_id, last_seen_datetime.format("%H:%M:%S"));
 
      Ok(Response::new(HeartBeatResponse {
          status: true
